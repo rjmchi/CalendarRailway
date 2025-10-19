@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,6 +15,14 @@ class HomeController extends Controller
         // foreach($bookings as $booking){
         //     $booking->title = "booked";
         // }
+        $user = User::limit(1)->get();
+        if (!$user) {
+            User::create([
+                'name' => 'Robert',
+                'email' => 'robert@test.com',
+                'password'=>'kether1330',
+            ]);
+        }
         return Inertia::render('Welcome', ['bookings'=> $bookings]);
     }
 }
