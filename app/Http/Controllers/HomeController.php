@@ -15,9 +15,9 @@ class HomeController extends Controller
         // foreach($bookings as $booking){
         //     $booking->title = "booked";
         // }
-        $user = User::where('email', 'robert@test.com')->get();
-        if (!$user) {
-            User::create([
+        $user = User::all();
+        if ($user->count() === 0) {
+            $user = User::create([
                 'name' => 'Robert',
                 'email' => 'robert@test.com',
                 'password'=>'kether1330',
