@@ -54,6 +54,7 @@ class BookingController extends Controller
 
         $booking->start = $start->addHours(15);
         $booking->end = $end->addHours(11);
+
         $booking->title = $request->title;
 
         $booking->save();
