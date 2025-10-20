@@ -31,7 +31,7 @@
         }
     </style>
 
-    <title inertia>{{ config('app.name', '802 Calendar') }}</title>
+    <title inertia>'802 Calendar'</title>
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
