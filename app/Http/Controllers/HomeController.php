@@ -12,9 +12,9 @@ class HomeController extends Controller
     public function index() {
         $bookings = Booking::all();
 
-        // foreach($bookings as $booking){
-        //     $booking->title = "booked";
-        // }
+        foreach($bookings as $booking){
+            $booking->title = "booked";
+        }
         $user = User::all();
         if ($user->count() === 0) {
             $user = User::create([
